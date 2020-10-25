@@ -1,0 +1,130 @@
+.accordion {
+  width: 80vw;
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0rem;
+}
+
+.list-title {
+  width: 100%;
+  padding: 1rem 1rem;
+  background: black;
+  color: white;
+  /* border: 1px solid white; */
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.list-title:hover {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.6);
+}
+
+.list-item {
+  margin-bottom: 1rem;
+}
+
+.item-data {
+  padding: 0rem 1rem;
+  max-height: 0rem;
+  overflow: hidden;
+  background: darkgray;
+  border: lightblue;
+  margin: 1rem auto;
+  width: 75vw;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.1rem;
+}
+input {
+  padding: 0.5rem 0.2rem;
+}
+.description {
+  padding: 1rem 0rem;
+  display: block;
+}
+
+button {
+  display: inline;
+  padding: 0.5rem 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.button-group {
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+.close-button {
+  position: absolute;
+  border: 1.5px solid white;
+  padding: 1rem;
+  color: white;
+  font-size: large;
+  bottom: 1rem;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.show {
+  /* display: block;
+  height: auto;
+  transition: height 2s; */
+  max-height: 100vh;
+  display: block;
+  animation: show 500ms ease-in-out;
+  /* overflow: scroll; */
+}
+
+.hide {
+  /* display: none; */
+  overflow: hidden;
+  animation: hide 500ms ease-in-out;
+  max-height: 0px;
+}
+
+@keyframes show {
+  from {
+    max-height: 0px;
+  }
+  to {
+    max-height: auto;
+  }
+}
+
+@keyframes hide {
+  from {
+    max-height: 100vh;
+  }
+  to {
+    max-height: 0px;
+  }
+}
+/*
+@keyframes mymove {
+  from {top: 0px;}
+  to {top: 200px;}
+} */
+
+/* div {
+  width: 100px;
+  height: 100px;
+  background: red;
+  transition: width 2s, height 4s;
+}
+
+div:hover {
+  width: 300px;
+  height: 300px;
+} */

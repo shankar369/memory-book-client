@@ -1,0 +1,29 @@
+.categories {
+  width: 80vw;
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0rem;
+}
+
+.category-form {
+  width: 70vw;
+}
+
+.category-item {
+  padding: 1rem 1rem;
+  background-color: darkgray;
+  margin-bottom: 1rem;
+  /* border: 1px solid black; */
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.category-item:hover {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.6);
+}

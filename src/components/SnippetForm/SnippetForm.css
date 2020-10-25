@@ -1,0 +1,10 @@
+form {
+  padding: 1rem 1rem;
+  background: gray;
+  width: 80vw;
+}
+
+input {
+  width: 100%;
+  margin-bottom: 0.5rem;
+}

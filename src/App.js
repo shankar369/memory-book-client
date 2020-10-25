@@ -1,24 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import Routing from "./Routing";
+import darkMode from "./static/images/dark-mode.png";
+// const image = require("./static/images/dark-mode.png");
 
 function App() {
+  const [status, setStatus] = useState("on");
+  const handleClick = () => {
+    document.documentElement.classList.toggle("dark-mode");
+    setStatus(status === "on" ? "off" : "on");
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <div className="dark-mode-img" onClick={handleClick}>
+        <img src={darkMode} alt="dark-mode-icon" />
+        <div>{`Turn ${status}`}</div>
+      </div>
+      {/* <button
+        className="dark-mode-button"
+        onClick={handleClick}
+      >{`dark-mode ${status}`}</button> */}
+      <Routing />
     </div>
   );
 }
