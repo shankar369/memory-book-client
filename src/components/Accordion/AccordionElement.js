@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Accordion.css";
 import CodeEditor from "../CodeEditor/CodeEditor";
 import { updateSnippet } from "../api";
+import TextEditor from "../TextEditor/TextEditor";
 
 function AccordionElement({ snippet }) {
   const [example, setExample] = useState(snippet.example);
@@ -10,6 +11,7 @@ function AccordionElement({ snippet }) {
   const [showAccordionData, setShowAccordionData] = useState("");
   const [disabled, setDisabled] = useState("nocursor");
   const [editState, setEditState] = useState(false);
+  const snippetType = snippet.snippetType;
 
   const saveUpdatedSnippet = () => {
     updateSnippet(snippet._id, { example, description }).then((response) => {
@@ -49,9 +51,9 @@ function AccordionElement({ snippet }) {
     }
   };
 
-  const handleChange = (editor, data, value) => {
-    setExample(value);
-  };
+  // const handleChange = (editor, data, value) => {
+  //   setExample(value);
+  // };
 
   const button = () =>
     !editState && (
@@ -78,12 +80,20 @@ function AccordionElement({ snippet }) {
         <label htmlFor="description">Description</label>
         <input
           type="text"
-          disabled={disabled == false ? false : true}
+          disabled={disabled === false ? false : true}
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
       </div>
-      <CodeEditor data={example} setData={setExample} disabled={disabled} />
+      {snippetType === "code" ? (
+        <CodeEditor data={example} setData={setExample} disabled={disabled} />
+      ) : (
+        <TextEditor
+          value={example}
+          setValue={setExample}
+          readOnlyMode={!editState}
+        />
+      )}
       {button()}
       {saveCancelButtons()}
     </div>

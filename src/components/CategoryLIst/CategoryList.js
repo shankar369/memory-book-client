@@ -33,7 +33,7 @@ const CategoryList = () => {
   const handleClick = (parentId, hasSubCategory) => {
     setCategories([]);
     setLoading(true);
-    if (hasSubCategory) {
+    if (hasSubCategory === "yes") {
       history.push(`/categories/${parentId}`);
     } else {
       history.push(`/snippets/${parentId}`);

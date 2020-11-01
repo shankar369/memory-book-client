@@ -9,6 +9,8 @@
   /* font-size: small; */
 }
 
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+
 html {
   font-size: 62.5%;
   --header1: calc(1.5rem + 1vw);
@@ -69,7 +71,7 @@ body {
 }
 
 .dark-mode {
-  filter: invert(100%);
+  filter: invert(1) hue-rotate(180deg);
 }
 
 .dark-mode-img {
