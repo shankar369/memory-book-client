@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { RadioGroup, Radio } from "react-radio-group";
+import React from "react";
 import "./RadioForm.css";
 
 const RadioForm = ({ title, radioList, selectedValue, setSelectedValue }) => {
