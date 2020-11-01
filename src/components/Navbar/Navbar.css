@@ -1,0 +1,11 @@
+.navbar {
+  display: grid;
+  align-items: center;
+  background: black;
+  font-family: "Pacifico", cursive;
+  font-size: larger;
+  color: white;
+  padding: 0.2rem 0.4rem;
+  min-height: 5vh;
+  min-width: 100vw;
+}

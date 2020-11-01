@@ -1,5 +1,8 @@
 import React, { useState } from "react";
+
+import TextEditor from "../TextEditor/TextEditor";
 import CodeEditor from "../CodeEditor/CodeEditor";
+import RadioForm from "../RadioForm/RadioForm";
 import "./SnippetForm.css";
 
 import { createSnippet } from "../api";
@@ -8,6 +11,7 @@ function SnippetForm({ parentId }) {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [example, setExample] = useState("");
+  const [selectedValue, setSelectedValue] = useState("text");
 
   const handleSubmit = () => {
     console.log({ parentId, name, description, example });
@@ -33,7 +37,18 @@ function SnippetForm({ parentId }) {
             onChange={(e) => setDescription(e.target.value)}
           />
         </div>
-        <CodeEditor data={example} setData={setExample} disabled={false} />
+        <RadioForm
+          title="select content type"
+          radioList={["text", "code"]}
+          selectedValue={selectedValue}
+          setSelectedValue={setSelectedValue}
+        />
+        {selectedValue === "text" ? (
+          <TextEditor value={example} setValue={setExample} />
+        ) : (
+          <CodeEditor data={example} setData={setExample} disabled={false} />
+        )}
+
         <button onClick={handleSubmit}>Create Snippet</button>
       </form>
     </div>

@@ -1,9 +1,11 @@
+const base_url = "https://safe-shelf-36413.herokuapp.com";
+
 export const getData = (parentId, snippets = false) => {
   let url = parentId
-    ? `http://localhost:5000/api/sub-categories/${parentId}`
-    : `http://localhost:5000/api/main-category`;
+    ? `${base_url}/api/sub-categories/${parentId}`
+    : `${base_url}/api/main-category`;
 
-  if (snippets) url = `http://localhost:5000/api/snippets/${parentId}`;
+  if (snippets) url = `${base_url}/api/snippets/${parentId}`;
   return fetch(url, {
     method: "GET",
   })
@@ -15,7 +17,7 @@ export const getData = (parentId, snippets = false) => {
 
 // category calls
 export const createCategory = (categoryData) => {
-  let url = `http://localhost:5000/api/sub-categories`;
+  let url = `${base_url}/api/sub-categories`;
 
   return fetch(url, {
     method: "POST",
@@ -31,7 +33,7 @@ export const createCategory = (categoryData) => {
 // snippets calls
 
 export const createSnippet = (snippetData) => {
-  let url = `http://localhost:5000/api/snippets`;
+  let url = `${base_url}/api/snippets`;
 
   return fetch(url, {
     method: "POST",
@@ -45,7 +47,7 @@ export const createSnippet = (snippetData) => {
 };
 
 export const updateSnippet = (snippetId, newSnippetData) => {
-  let url = `http://localhost:5000/api/snippets/${snippetId}`;
+  let url = `${base_url}/api/snippets/${snippetId}`;
 
   return fetch(url, {
     method: "PUT",

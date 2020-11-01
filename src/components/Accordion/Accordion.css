@@ -93,6 +93,9 @@ button {
   animation: hide 500ms ease-in-out;
   max-height: 0px;
 }
+.app .ql-snow.ql-toolbar {
+  display: none;
+}
 
 @keyframes show {
   from {

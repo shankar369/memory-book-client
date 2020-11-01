@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./LightBox.css";
 
 function LightBox({ showLightBox, setShowLightBox, children }) {

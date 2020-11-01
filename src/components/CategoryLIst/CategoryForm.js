@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import "./Category.css";
+import RadioForm from "../RadioForm/RadioForm";
 
 import { createCategory } from "../api";
 
 function SnippetForm({ parentId }) {
   const [name, setName] = useState("");
-  const [hasSubCategory, setHasSubCategory] = useState(false);
+  const [hasSubCategory, setHasSubCategory] = useState("no");
 
   const handleSubmit = () => {
     setHasSubCategory(hasSubCategory === "true");
@@ -14,22 +15,28 @@ function SnippetForm({ parentId }) {
   };
 
   const radioGroup = () => (
-    <div>
-      <label>true</label>
-      <input
-        type="radio"
-        value={true}
-        checked={hasSubCategory === true}
-        onChange={(e) => setHasSubCategory(true)}
-      />
-      <label>false</label>
-      <input
-        type="radio"
-        value={false}
-        checked={hasSubCategory === false}
-        onChange={(e) => setHasSubCategory(false)}
-      />
-    </div>
+    // <div>
+    //   <label>true</label>
+    //   <input
+    //     type="radio"
+    //     value={true}
+    //     checked={hasSubCategory === true}
+    //     onChange={(e) => setHasSubCategory(true)}
+    //   />
+    //   <label>false</label>
+    //   <input
+    //     type="radio"
+    //     value={false}
+    //     checked={hasSubCategory === false}
+    //     onChange={(e) => setHasSubCategory(false)}
+    //   />
+    // </div>
+    <RadioForm
+      title="Has Sub-Category"
+      radioList={["yes", "no"]}
+      selectedValue={hasSubCategory}
+      setSelectedValue={setHasSubCategory}
+    />
   );
 
   return (
