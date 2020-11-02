@@ -81,7 +81,7 @@ button {
   /* display: block;
   height: auto;
   transition: height 2s; */
-  max-height: 100vh;
+  max-height: 1000vh;
   display: block;
   animation: show 500ms ease-in-out;
   /* overflow: scroll; */
@@ -112,6 +112,15 @@ button {
   }
   to {
     max-height: 0px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  html {
+    --text: calc(1.5rem + 0.5vw);
+  }
+  .accordion {
+    width: 100vw;
   }
 }
 /*
