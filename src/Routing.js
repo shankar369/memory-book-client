@@ -10,10 +10,10 @@ function Routing() {
         <Route exact path="/">
           <CategoryList name="main category" />
         </Route>
-        <Route path="/categories/:parentId">
+        <Route exact path="/categories/:parentId/">
           <CategoryList name="subcategory" />
         </Route>
-        <Route path="/snippets/:parentId">
+        <Route exact path="/snippets/:parentId/">
           <Accordion />
         </Route>
       </Switch>
